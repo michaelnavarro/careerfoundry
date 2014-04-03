@@ -1,0 +1,27 @@
+<div class="container-inner">
+
+  <h1>Listing products</h1>
+  <div class="container no-padding">
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-md-4 product-outer">
+          <div class="product-inner">
+            <h1><%= link_to product.name, product %></h1>
+            <p><%= product.description %></p>
+            <p><%= number_to_currency(product.price, locale: :de) %></p>
+            <p><img src="<%= product.image_url %>"></p>
+            <div class="product-admin"> 
+              <%= link_to 'Edit', edit_product_path(product) %><br>
+              <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <br>
+
+  <p><%= link_to 'New Product', new_product_path, {:class => "btn btn-danger btn-lg", :role => "button"} %></p>
+
+</div>

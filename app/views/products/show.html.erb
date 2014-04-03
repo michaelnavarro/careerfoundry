@@ -1,0 +1,14 @@
+<div class="container-inner">
+
+	<p id="notice"><%= notice %></p>
+
+	<div class="product-inner">
+	  <h1><%= @product.name %></h1>
+	  <p><%= @product.description %></p>
+	  <p><img src="<%= @product.image_url %>"></p>
+	  <p><%= number_to_currency(@product.price, locale: :de) %></p>
+	 </div>
+
+	<%= link_to 'Edit', edit_product_path(@product), {:class => "btn btn-danger btn-lg", :role => "button"} %>
+	<%= link_to 'Back', products_path, {:class => "btn btn-danger btn-lg", :role => "button"} %>
+</div>

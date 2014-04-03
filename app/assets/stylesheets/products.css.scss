@@ -1,0 +1,48 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.product-inner {
+	background-color: #eee;
+	padding: 10px;
+	border: 5px solid #000;
+	position: relative;
+	margin: 0 10px 10px 0;
+	a {
+		color: #000;
+	}
+	> h1 a:hover {
+		color: #d43f3a;
+		text-decoration: none;
+		&:after{
+			content: " \2192";
+		}
+	}
+}
+
+.no-padding {
+	padding: 0px;
+	margin: 0px;
+}
+
+.no-padding .row {
+	margin: 0;
+}
+
+.product-admin {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 0 10px;
+	display: none;
+	background-color: #000;
+	border: 1px solid #fff;
+	a {
+		color: #fff;
+	}
+}
+
+.product-inner:hover .product-admin {
+	display: inline;
+}
