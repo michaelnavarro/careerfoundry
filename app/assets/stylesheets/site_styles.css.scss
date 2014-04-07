@@ -54,6 +54,8 @@ header {
 
 .jumbotron:first-of-type {
 	padding-top: 50px;
+	border-right: 10px solid #000;
+	border-left: 10px solid #000;
 	.container {
 		background-color: #fff;
 	}
