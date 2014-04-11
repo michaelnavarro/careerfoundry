@@ -3,6 +3,9 @@ class FormExampleController < ApplicationController
   end
 
   def form_output
+  	ContactMailer.thankyou_email(params).deliver
+  	ContactMailer.sent_email(params).deliver
   	render "form_result"
+
   end
 end

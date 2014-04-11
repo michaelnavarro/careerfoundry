@@ -1,5 +1,5 @@
 <div class="container-inner">
-	<h1>Form Input</h1>
+	<h1>Contact Us</h1>
 
 	<%= form_tag(form_output_path, method: "get") do %>
 	  <p>
@@ -7,8 +7,12 @@
 	  	<%= text_field_tag(:name) %>
 	  </p>
 	  <p>
-	  	<%= label_tag(:color, "Favorite Color:") %>
-	  	<%= text_field_tag(:color) %>
+	  	<%= label_tag(:email, "E-mail:") %>
+	  	<%= text_field_tag(:email) %>
+	  </p>
+	  <p>
+	  	<%= label_tag(:message, "Message:") %>
+	  	<%= text_area_tag(:message) %>
 	  </p>
 	  <p>
 	  	<%= submit_tag("Submit") %>
