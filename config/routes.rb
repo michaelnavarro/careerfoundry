@@ -10,6 +10,7 @@ Careerfoundry::Application.routes.draw do
   get 'contact_thanks',  to: 'form_example#form_output'
 
   resources :products
+  resources :posts
 
  
   # The priority is based upon order of creation: first created -> highest priority.
