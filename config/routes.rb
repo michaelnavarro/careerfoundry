@@ -9,7 +9,10 @@ Careerfoundry::Application.routes.draw do
   get 'contact',   to: 'form_example#form_input'
   get 'contact_thanks',  to: 'form_example#form_output'
 
-  resources :products
+  resources :products do
+    resources :testimonials
+  end
+  
   resources :posts do
     resources :comments
   end

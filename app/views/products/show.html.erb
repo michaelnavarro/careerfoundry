@@ -9,6 +9,35 @@
 	  <p><%= number_to_currency(@product.price, locale: :de) %></p>
 	 </div>
 
+	 <div class="post_comments">
+		<div class="landing_header">Testimonials</div>
+		<% @product.testimonials.each do |testimonial| %>
+		    <div class="post">
+       			<div class="post_title"><%= testimonial.name %></div>
+		    	<div class="post_text"><%= testimonial.body %></div>
+		    </div>
+		<% end %>
+		
+		<div class="landing_header">Add a Testimonial</div>
+		<%= form_for([@product, @product.testimonials.build]) do |f| %>
+		  <div class="post">
+		  	<table>
+		  		<tr>
+			    	<td><%= f.label :name %></td>
+			    	<td><%= f.label :email %></td>
+			    	<td><%= f.label :body %></td>
+			    </tr>
+			    <tr>
+			    	<td><%= f.text_field :name %></td>
+			    	<td><%= f.text_field :email %></td>
+			   		<td><%= f.text_area :body %></td>
+				</tr>
+			 </table>
+		    <%= f.submit 'Add Testimonial', :class => 'btn btn-danger' %>
+		   </div>
+		<% end %>
+	</div>
+
 	<%= link_to 'Edit', edit_product_path(@product), {:class => "btn btn-danger btn-lg", :role => "button"} %>
 	<%= link_to 'Back', products_path, {:class => "btn btn-danger btn-lg", :role => "button"} %>
 </div>
