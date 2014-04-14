@@ -30,6 +30,22 @@ header {
 
 }
 
+.landing_header{
+	width: 100%;
+	text-align: center;
+	background-color: #000;
+	a {
+		line-height: 2em;
+		width: 100%;
+		padding: 0 auto;
+		color: #fff;
+		font-size: 3em;
+	}
+	&:hover {
+		background-color: #d43f3a;
+	}
+}
+
 .mag_thumb {
 	height: 300px;
 }
