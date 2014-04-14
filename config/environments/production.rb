@@ -77,7 +77,5 @@ Careerfoundry::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
-config.assets.precompile += [ '*.css', '*.js']
   
 end
