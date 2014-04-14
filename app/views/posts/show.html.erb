@@ -5,9 +5,36 @@
         <div class="post_title"><%= @post.title %></div>
 	  	<div class="post_text"><%= @post.text %></div>
 	  	<div class="post_edit"><%= link_to 'Edit', edit_post_path(@post) %></div>
-	 </div>
+	</div>
 
-	 <div class="post_btn">
+	<div class="post_comments">
+		<div class="landing_header">Comments</div>
+		<% @post.comments.each do |comment| %>
+		    <div class="post">
+       			<div class="post_title"><%= comment.commenter %></div>
+		    	<div class="post_text"><%= comment.body %></div>
+		    </div>
+		<% end %>
+		
+		<div class="landing_header">Add a Comment</div>
+		<%= form_for([@post, @post.comments.build]) do |f| %>
+		  <div class="post">
+		  	<table>
+		  		<tr>
+			    	<td><%= f.label :commenter %></td>
+			    	<td><%= f.label :body %></td>
+			    </tr>
+			    <tr>
+			    	<td><%= f.text_field :commenter %></td>
+			   		<td><%= f.text_area :body %></td>
+				</tr>
+			 </table>
+		    <%= f.submit 'Add Comment', :class => 'btn btn-danger' %>
+		   </div>
+		<% end %>
+	</div>
+
+	<div class="post_btn">
 		<%= link_to 'Back', posts_path %>
 	</div>
 </div>

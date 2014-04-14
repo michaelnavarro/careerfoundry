@@ -9,6 +9,14 @@
 	&:hover .post_edit {
 		display: block;
 	}
+	table {
+		width: 100%;
+	}
+	td {
+		padding:10px;
+		width: 50%;
+		text-align: center;
+	}
 }
 
 .post_title {
