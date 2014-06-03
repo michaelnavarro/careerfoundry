@@ -1,1 +1,1 @@
-Career foundry website
+Sample Magazine website using ruby.
